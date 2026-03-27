@@ -19,19 +19,19 @@ void Player::animate(const float frames)
 		break;
 	}
 	if (frames < 15) {
-		sprite->setTexture(textures[(int)(offset / 2.f) - 1]);
+		sprite->setTexture(textures->at((int)(offset / 2.f) - 1));
 		return;
 	}
 	if (frames < 30) {
-		sprite->setTexture(textures[2 + offset]);
+		sprite->setTexture(textures->at(2 + offset));
 		return;
 	}
 	if (frames < 45) {
-		sprite->setTexture(textures [(int)(offset/2.f)-1]);
+		sprite->setTexture(textures->at((int)(offset/2.f)-1));
 		return;
 	}
 	if (frames < 60) {
-		sprite->setTexture(textures[3 + offset]);
+		sprite->setTexture(textures->at(3 + offset));
 		return;
 	}
 }
@@ -40,19 +40,19 @@ void Player::eat(const float frames)
 {
 	int offset = 1;
 	if (frames < 15) {
-		sprite->setTexture(textures[3]);
+		sprite->setTexture(textures->at(3));
 		return;
 	}
 	if (frames < 30) {
-		sprite->setTexture(textures[12]);
+		sprite->setTexture(textures->at(12));
 		return;
 	}
 	if (frames < 45) {
-		sprite->setTexture(textures[3]);
+		sprite->setTexture(textures->at(3));
 		return;
 	}
 	if (frames < 60) {
-		sprite->setTexture(textures[13]);
+		sprite->setTexture(textures->at(13));
 		return;
 	}
 }
@@ -86,27 +86,21 @@ void Player::updateSprite()
 	switch (direction)
 	{
 		case 'l':
-			sprite->setTexture(textures[2]);
+			sprite->setTexture(textures->at(2));
 			break;
 		case 'r':
-			sprite->setTexture(textures[3]);
+			sprite->setTexture(textures->at(3));
 			break;
 		case 'u':
-			sprite->setTexture(textures[1]);
+			sprite->setTexture(textures->at(1));
 			break;
 		case 'd':
-			sprite->setTexture(textures[0]);
+			sprite->setTexture(textures->at(0));
 			break;
 	}
 }
 
-void Player::shoot(std::vector<Fly> *flies)
+void Player::shoot()
 {
-	if (isShooting) {
-		return;
-	}
-	isShooting = true;
-	Fly fly(direction, sprite->getGlobalBounds().position);
-	flies->push_back(fly);
-	isShooting = false;
+	flies->push_back(Fly(direction,sf::Vector2f((sprite->getPosition().x + (sprite->getTextureRect().size.x*sprite->getScale().x/2)),(sprite->getPosition().y + (sprite->getTextureRect().size.y * sprite->getScale().y / 2)))));
 }

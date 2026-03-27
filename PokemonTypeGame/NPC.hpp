@@ -4,6 +4,7 @@
 class Npc
 {
 public:
+	bool alive = true;
     sf::Texture texture;
     sf::Sprite *sprite;
 

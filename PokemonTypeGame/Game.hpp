@@ -11,10 +11,10 @@ class Game
 {
 private:
     std::vector<Npc> *enemies = new std::vector<Npc>(5);
-    std::vector<Fly> *flies = new std::vector<Fly>(50);
+    std::vector<Fly> *flies = new std::vector<Fly>(5);
     sf::RenderWindow window;
-    sf::Vector2f center;
     sf::View camera;
+    sf::Vector2f center;
     Player player;
     Background background;
     sf::Texture t;
@@ -25,6 +25,7 @@ public:
     }
     ~Game() {
         delete enemies;
+        delete flies;
 	}
     int run();
 };
