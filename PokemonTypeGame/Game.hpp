@@ -5,13 +5,14 @@
 #include "Input.hpp"
 #include "NPC.hpp"
 #include "Fly.hpp"
+#include "print.hpp"
 #include <iostream>
 
 class Game
 {
 private:
     std::vector<Npc> *enemies = new std::vector<Npc>(100);
-    std::vector<Fly> *flies = new std::vector<Fly>(5);
+    std::vector<Fly> *flies = new std::vector<Fly>(0);
     sf::RenderWindow window;
     sf::View camera;
     sf::Vector2f center;

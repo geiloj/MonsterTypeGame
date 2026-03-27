@@ -102,5 +102,10 @@ void Player::updateSprite()
 
 void Player::shoot()
 {
-	flies->push_back(Fly(direction,sf::Vector2f((sprite->getPosition().x + (sprite->getTextureRect().size.x*sprite->getScale().x/2)),(sprite->getPosition().y + (sprite->getTextureRect().size.y * sprite->getScale().y / 2)))));
+	static bool prev = false;
+	bool now = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space);
+	if (now && !prev) {
+		flies->push_back(Fly(direction, sf::Vector2f((sprite->getPosition().x + (sprite->getTextureRect().size.x * sprite->getScale().x / 2)), (sprite->getPosition().y + (sprite->getTextureRect().size.y * sprite->getScale().y / 2)))));
+	}
+	prev = now;
 }

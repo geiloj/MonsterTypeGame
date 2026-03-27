@@ -148,6 +148,7 @@
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="NPC.hpp" />
     <ClInclude Include="Player.hpp" />
+    <ClInclude Include="print.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

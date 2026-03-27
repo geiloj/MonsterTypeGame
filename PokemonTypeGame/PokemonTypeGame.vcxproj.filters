@@ -53,5 +53,8 @@
     <ClInclude Include="Fly.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="print.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

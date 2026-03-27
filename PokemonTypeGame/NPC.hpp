@@ -1,4 +1,5 @@
 #pragma once
+#include "print.hpp"
 #include <iostream>
 #include <SFML/Graphics.hpp>
 class Npc
@@ -13,13 +14,13 @@ public:
         {
             std::cout << "Failed to load textures " << "!\n";
         }
-        std::cout << "Texturen geladen!\n";
+        print("Texturen geladen!\n");
         sprite = new sf::Sprite(texture);
         sprite->setScale(sf::Vector2f(5.f, 5.f));
-        std::cout << "NPC erstellt!\n";
+        print("NPC erstellt!\n");
     }
     void destroy() {
         delete sprite;
-        std::cout << "NPC zerstört!\n";
+        print("NPC zerstört!\n");
 	}
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "print.hpp"
 
 #define BACKGROUND_WIDTH 800
 #define BACKGROUND_HEIGHT 600
@@ -13,7 +14,7 @@ private:
 public:
 	sf::Sprite* background;
 	Background() {
-		std::cout << "Loading Background textures...\n";
+		print("Loading Background textures...\n");
         if (!texture.loadFromFile("Sprites/Background/BACKGROUND.png", false, sf::IntRect({0,0}, {800,600})))
         {
             std::cout << "Failed to load Background textures!\n";
@@ -21,7 +22,7 @@ public:
 		texture.setRepeated(true);
 		background = new sf::Sprite(texture);
 		background->setTextureRect(sf::IntRect({ 0,0 }, {BACKGROUND_WIDTH*MAP_SIZE,BACKGROUND_HEIGHT*MAP_SIZE}));
-		std::cout << "Background textures loaded!\n";
+		print("Background textures loaded!\n");
     }
 };
 

@@ -54,8 +54,7 @@ void input(Player* p, float SPEED, sf::RenderWindow* window, sf::View* camera, c
             p->sprite->move(sf::Vector2f(SPEED, 0));
         }
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
-        p->shoot();
-    }
+    p->shoot();
+
     window->setView(*camera);
 }
