@@ -30,14 +30,15 @@ public:
 				move_vector = sf::Vector2f(-SPEED, 0.f);
 				break;
 			case 'u':
-				move_vector = sf::Vector2f(0.f, SPEED);
+				move_vector = sf::Vector2f(0.f, -SPEED);
 				break;
 			case 'd':
-				move_vector = sf::Vector2f(0.f, -SPEED);
+				move_vector = sf::Vector2f(0.f, SPEED);
 				break;
 		}
 			sprite->setPosition(pos);
     }
+	void fly();
     bool move(std::vector<Npc> *enemies);
 	void destroy() {
 		std::cout << "Fly zerstört!\n";

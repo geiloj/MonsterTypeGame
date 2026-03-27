@@ -10,7 +10,7 @@
 class Game
 {
 private:
-    std::vector<Npc> *enemies = new std::vector<Npc>(5);
+    std::vector<Npc> *enemies = new std::vector<Npc>(100);
     std::vector<Fly> *flies = new std::vector<Fly>(5);
     sf::RenderWindow window;
     sf::View camera;
@@ -20,6 +20,7 @@ private:
     sf::Texture t;
     float frame;
 public:
+	int run();
     Game(){
 		frame = 0;
     }
@@ -27,5 +28,4 @@ public:
         delete enemies;
         delete flies;
 	}
-    int run();
 };
