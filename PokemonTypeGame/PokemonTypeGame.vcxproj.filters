@@ -27,6 +27,12 @@
     <ClCompile Include="Game.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Fly.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.hpp">
@@ -39,6 +45,12 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Game.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Fly.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

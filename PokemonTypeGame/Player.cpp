@@ -99,3 +99,14 @@ void Player::updateSprite()
 			break;
 	}
 }
+
+void Player::shoot(std::vector<Fly> *flies)
+{
+	if (isShooting) {
+		return;
+	}
+	isShooting = true;
+	Fly fly(direction, sprite->getGlobalBounds().position);
+	flies->push_back(fly);
+	isShooting = false;
+}
