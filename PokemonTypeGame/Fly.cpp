@@ -1,10 +1,16 @@
 #include "Fly.hpp"
 
+sf::Texture Fly::texture;
 bool Fly::isShooting;
 
-void Fly::fly()
+bool Fly::fly()
 {
-	sprite->move(move_vector);
+	if (accelerate < 0) {
+		return true;
+	}
+	accelerate -= 0.013f;
+	sprite->move(sf::Vector2f(move_vector.x*accelerate, move_vector.y*accelerate));
+	return false;
 }
 
 bool Fly::move(std::vector<Npc> *enemies)

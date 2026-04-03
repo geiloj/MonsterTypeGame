@@ -54,6 +54,18 @@ void input(Player* p, float SPEED, sf::RenderWindow* window, sf::View* camera, c
             p->sprite->move(sf::Vector2f(SPEED, 0));
         }
     }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
+        p->setTopLeft();
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
+        p->setTopRight();
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
+        p->setBottomLeft();
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
+        p->setBottomRight();
+    }
     p->shoot();
 
     window->setView(*camera);

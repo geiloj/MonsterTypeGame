@@ -27,9 +27,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="NPC.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Fly.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>

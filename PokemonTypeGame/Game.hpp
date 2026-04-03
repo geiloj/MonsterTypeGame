@@ -1,32 +1,33 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <memory>
 #include "Player.hpp"
 #include "Background.hpp"
 #include "Input.hpp"
 #include "NPC.hpp"
 #include "Fly.hpp"
 #include "print.hpp"
-#include <iostream>
 
 class Game
 {
 private:
-    std::vector<Npc> *enemies = new std::vector<Npc>(100);
-    std::vector<Fly> *flies = new std::vector<Fly>(0);
-    sf::RenderWindow window;
-    sf::View camera;
-    sf::Vector2f center;
-    Player player;
-    Background background;
-    sf::Texture t;
-    float frame;
+	Background background;
+	std::vector<Npc> enemies;
+	Player player;
+
+	sf::RenderWindow window;
+	sf::Vector2f center;
+	sf::View camera;
+
+	float frame;
+
+	static constexpr int WINDOW_WIDTH = 1920;
+	static constexpr int WINDOW_HEIGHT = 1080;
+	
+	static constexpr int FRAMERATE_LIMIT = 60;
+	static constexpr int MAX_ENEMIES = 100;
+
 public:
 	int run();
-    Game(){
-		frame = 0;
-    }
-    ~Game() {
-        delete enemies;
-        delete flies;
-	}
+	Game() : frame(0), enemies(MAX_ENEMIES) {}
 };
